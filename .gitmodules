@@ -1,0 +1,6 @@
+[submodule "doc"]
+	path = doc
+	url = https://github.com/CristianCMP/ems-algashop-doc.git
+[submodule "microservices/ordering"]
+	path = microservices/ordering
+	url = https://github.com/CristianCMP/ems-algashop-ordering.git
