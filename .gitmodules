@@ -1,12 +1,20 @@
 [submodule "doc"]
 	path = doc
 	url = https://github.com/CristianCMP/ems-algashop-doc.git
+	branch = main
 [submodule "microservices/ordering"]
 	path = microservices/ordering
 	url = https://github.com/CristianCMP/ems-algashop-ordering.git
+	branch = main
 [submodule "microservices/billing"]
 	path = microservices/billing
 	url = https://github.com/CristianCMP/ems-algashop-billing.git
+	branch = main
 [submodule "microservices/product-catalog"]
 	path = microservices/product-catalog
 	url = https://github.com/CristianCMP/ems-algashop-product-catalog.git
+	branch = main
+[submodule "template"]
+	path = template
+	url = https://github.com/CristianCMP/ems-algashop-template.git
+	branch = main
