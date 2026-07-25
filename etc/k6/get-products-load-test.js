@@ -6,9 +6,9 @@ export const options = {
     { duration: '5s', target: 100 }, // Target is the VUs
     { duration: '5s', target: 300 },
     { duration: '5s', target: 500 },
-    { duration: '5s', target: 1000 },
-    { duration: '5s', target: 300 },
-    { duration: '5s', target: 0 },
+    { duration: '10s', target: 1000 },
+    { duration: '3s', target: 300 },
+    { duration: '3s', target: 0 },
   ],
 };
 
