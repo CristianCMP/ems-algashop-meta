@@ -10,6 +10,10 @@ export const options = {
     { duration: '3s', target: 300 },
     { duration: '3s', target: 0 },
   ],
+  thresholds: {
+    http_req_duration: ['p95 < 800'], // 95% of requests should be below 800ms
+    http_req_failed: ['rate < 0.01'], // Error rate should be less than 1%
+  }
 };
 
 export default function () {
