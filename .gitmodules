@@ -22,3 +22,6 @@
 	path = microservices/billing-scheduler
 	url = https://github.com/CristianCMP/ems-algashop-billing-scheduler.git
 	branch = main
+[submodule "microservices/authorization-server"]
+	path = microservices/authorization-server
+	url = https://github.com/CristianCMP/ems-algashop-authorization-server.git
