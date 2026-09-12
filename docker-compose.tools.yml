@@ -181,7 +181,7 @@ services:
       - "4510-4559:4510-4559"  # External services port range
     environment:
       DEBUG: 1 # ativa o debug
-      SERVICES: s3, secretsmanager  # ativa o serviço S3
+      SERVICES: s3, secretsmanager, ssm  # ativa o serviço S3
       LS_ACCESS_KEY_ID: LSIAQAAAAAAVNCBMPNSG
       LS_SECRET_ACCESS_KEY: test
       LS_REGION: us-east-1
