@@ -29,3 +29,7 @@
 	path = microservices/service-registry
 	url = https://github.com/CristianCMP/ems-algashop-service-registry.git
 	branch = main
+[submodule "microservices/gateway-ecommerce"]
+	path = microservices/gateway-ecommerce
+	url = https://github.com/CristianCMP/ems-algashop-gateway-ecommerce.git
+	branch = main
