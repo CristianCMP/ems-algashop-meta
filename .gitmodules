@@ -41,3 +41,7 @@
 	path = app/ecommerce
 	url = https://github.com/CristianCMP/ems-algashop-ecommerce.git
 	branch = main
+[submodule "apps/admin"]
+	path = apps/admin
+	url = https://github.com/CristianCMP/ems-algashop-admin.git
+	branch = main
