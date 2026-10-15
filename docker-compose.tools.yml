@@ -217,10 +217,10 @@ services:
       KAFKA_KRAFT_CLUSTER_ID: "xiLkLerZQXaw45eXNW7qGw" # KRaft cluster identifier; the format must be a valid ID
       KAFKA_NODE_ID: 1
       KAFKA_PROCESS_ROLES: controller,broker # Specifies that the node acts as a controller and broker
-      KAFKA_LISTENERS: PLAINTEXT://:9090,CONTROLLER://:9091,EXTERNAL://:9092 # Defines the listeners for internal and external communication
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://algashop-kafka-1:9090,EXTERNAL://localhost:9092 # Defines the listeners advertised for external communication
+      KAFKA_LISTENERS: PLAINTEXT://:9081,CONTROLLER://:9191,EXTERNAL://:9092 # Defines the listeners for internal and external communication
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://algashop-kafka-1:9081,EXTERNAL://localhost:9092 # Defines the listeners advertised for external communication
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,EXTERNAL:PLAINTEXT,PLAINTEXT:PLAINTEXT # Maps the security protocols for each listener
-      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@algashop-kafka-1:9091,2@algashop-kafka-2:9091,3@algashop-kafka-3:9091 # Defines the voters for the controlling shareholder's quorum
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@algashop-kafka-1:9191,2@algashop-kafka-2:9192,3@algashop-kafka-3:9193 # Defines the voters for the controlling shareholder's quorum
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT # Defines the listener for communication between brokers
       KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER # Sets the controller listener
       KAFKA_DEFAULT_REPLICATION_FACTOR: 3 # Default replication factor for created topics
@@ -234,15 +234,15 @@ services:
   algashop-kafka-2:
     image: apache/kafka:4.3.1
     ports:
-      - 9093:9092
+      - 9093:9093
     environment:
       KAFKA_KRAFT_CLUSTER_ID: "xiLkLerZQXaw45eXNW7qGw"
       KAFKA_NODE_ID: 2
       KAFKA_PROCESS_ROLES: controller,broker
-      KAFKA_LISTENERS: PLAINTEXT://:9090,CONTROLLER://:9091,EXTERNAL://:9092
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://algashop-kafka-2:9090,EXTERNAL://localhost:9093
+      KAFKA_LISTENERS: PLAINTEXT://:9082,CONTROLLER://:9192,EXTERNAL://:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://algashop-kafka-2:9082,EXTERNAL://localhost:9093
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,EXTERNAL:PLAINTEXT,PLAINTEXT:PLAINTEXT
-      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@algashop-kafka-1:9091,2@algashop-kafka-2:9091,3@algashop-kafka-3:9091
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@algashop-kafka-1:9191,2@algashop-kafka-2:9192,3@algashop-kafka-3:9193
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
       KAFKA_DEFAULT_REPLICATION_FACTOR: 3
@@ -256,15 +256,15 @@ services:
   algashop-kafka-3:
     image: apache/kafka:4.3.1
     ports:
-      - 9094:9092
+      - 9094:9094
     environment:
       KAFKA_KRAFT_CLUSTER_ID: "xiLkLerZQXaw45eXNW7qGw"
       KAFKA_NODE_ID: 3
       KAFKA_PROCESS_ROLES: controller,broker
-      KAFKA_LISTENERS: PLAINTEXT://:9090,CONTROLLER://:9091,EXTERNAL://:9092
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://algashop-kafka-3:9090,EXTERNAL://localhost:9094
+      KAFKA_LISTENERS: PLAINTEXT://:9083,CONTROLLER://:9193,EXTERNAL://:9094
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://algashop-kafka-3:9083,EXTERNAL://localhost:9094
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,EXTERNAL:PLAINTEXT,PLAINTEXT:PLAINTEXT
-      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@algashop-kafka-1:9091,2@algashop-kafka-2:9091,3@algashop-kafka-3:9091
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@algashop-kafka-1:9191,2@algashop-kafka-2:9192,3@algashop-kafka-3:9193
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
       KAFKA_DEFAULT_REPLICATION_FACTOR: 3
@@ -280,8 +280,8 @@ services:
     ports:
       - 9084:8080
     environment:
-      KAFKA_CLUSTERS_0_NAME: algadelivery-kafka-cluster
-      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: algashop-kafka-1:9090,algashop-kafka-2:9090,algashop-kafka-3:9090
+      KAFKA_CLUSTERS_0_NAME: algashop-cluster
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: algashop-kafka-1:9081,algashop-kafka-2:9082,algashop-kafka-3:9083
 volumes:
   algashop-postgres:
 #  algashop-mongodb:
